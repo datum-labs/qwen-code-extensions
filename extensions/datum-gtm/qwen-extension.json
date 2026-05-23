@@ -1,0 +1,23 @@
+{
+  "name": "datum-gtm",
+  "version": "1.0.0",
+  "description": "Go-to-market automation with commercial strategy, product discovery, and customer support tools for Datum Cloud",
+  "author": {
+    "name": "Datum Cloud",
+    "url": "https://github.com/datum-cloud"
+  },
+  "repository": "https://github.com/datum-cloud/claude-code-plugins",
+  "license": "MIT",
+  "keywords": [
+    "gtm",
+    "commercial",
+    "product-discovery",
+    "marketing",
+    "support",
+    "pricing"
+  ],
+  "skills": "skills",
+  "agents": "agents",
+  "commands": "commands",
+  "settings": []
+}

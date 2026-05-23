@@ -1,0 +1,28 @@
+{
+  "name": "milo-activity",
+  "version": "1.0.0",
+  "description": "Query audit logs, investigate incidents, and author ActivityPolicies using the Milo Activity service",
+  "author": {
+    "name": "Datum Cloud",
+    "url": "https://github.com/datum-cloud"
+  },
+  "repository": "https://github.com/datum-cloud/activity",
+  "license": "AGPL-3.0",
+  "keywords": [
+    "kubernetes",
+    "audit",
+    "activity",
+    "incident",
+    "observability",
+    "milo",
+    "cel"
+  ],
+  "skills": "skills",
+  "agents": "agents",
+  "mcpServers": {
+    "activity": {
+      "command": "activity"
+    }
+  },
+  "settings": []
+}
