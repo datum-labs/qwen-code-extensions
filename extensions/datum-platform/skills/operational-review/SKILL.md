@@ -9,6 +9,26 @@ This skill covers producing and publishing weekly ops review reports for the
 Datum AI Edge — covering edge traffic performance, consumer patterns, and
 control plane provisioning health.
 
+## Critical Rules
+
+### Stop when a dependency is down
+
+Before querying metrics, verify that each dependency is operational. If a
+required dependency is unavailable, **stop the review** — do not proceed with
+partial, incorrect, or stale data.
+
+Required dependencies (in order of check):
+
+1. **Metrics source** (MCP gateway → VictoriaMetrics) — if unreachable, stop.
+2. **GitHub CLI** (for incident lookup) — if unavailable, note it and continue
+   with metric data (do not stop for this).
+
+If the metrics source is down:
+- Do **not** carry forward data from the prior period.
+- Do **not** create any files in the `reviews/` directory.
+- Stop all agents. Alert the user with a brief explanation of which dependency
+  failed and why the review cannot proceed.
+
 ## Scope
 
 An operational review covers two domains:
