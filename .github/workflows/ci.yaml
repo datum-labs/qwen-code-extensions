@@ -1,0 +1,17 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  ci:
+    uses: datum-cloud/actions/.github/workflows/ci-basic.yaml@v1.26.0
+    with:
+      run: |
+        shellcheck -S error $(git ls-files "*.sh")
+        jq empty $(git ls-files "*.json")

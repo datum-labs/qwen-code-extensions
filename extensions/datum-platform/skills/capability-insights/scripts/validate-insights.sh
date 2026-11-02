@@ -32,7 +32,7 @@ fi
 
 # Validate YAML syntax
 echo "Checking YAML syntax..."
-for file in config/insights/*.yaml 2>/dev/null; do
+for file in config/insights/*.yaml; do
     if [ -f "$file" ]; then
         if ! python3 -c "import yaml; yaml.safe_load(open('$file'))" 2>/dev/null; then
             echo "ERROR: Invalid YAML syntax in $file"
@@ -46,7 +46,7 @@ fi
 
 # Check for required fields in policies
 echo "Checking policy structure..."
-for file in config/insights/*.yaml 2>/dev/null; do
+for file in config/insights/*.yaml; do
     if [ -f "$file" ] && grep -q "kind: InsightPolicy" "$file"; then
         # Check for targetSelector
         if ! grep -q "targetSelector:" "$file"; then
